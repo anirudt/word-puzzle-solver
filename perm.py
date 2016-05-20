@@ -14,12 +14,13 @@ def shuffled_perm(s,num, known):
 	i = list(set(i))	
         #print i
 	print "Stage interim"	
+        yard = 0
         for entry in i:
             tmp = entry
-            carry = 0
+            yard = 0
             for j in known:
-                tmp = tmp[0:j[0]+carry] + j[1] + tmp[j[0]+carry:]
-                carry += 1
+                tmp = tmp[0:yard] + tmp[yard:j[0]] + j[1] + tmp[j[0]:]
+                yard = j[0]+1
             a.append(tmp)
         #print a
         d = enchant.Dict("en_us")
