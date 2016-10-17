@@ -3,7 +3,6 @@ import codecs
 import pdb
 from random import shuffle
 import enchant
-import nltk
 
 def perm_shuffled(string, num, known):
     word_len = len(known) + num
